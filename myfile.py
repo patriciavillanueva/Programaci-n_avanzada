@@ -6,7 +6,7 @@ import datetime
 
 
 st.title("Proyecto de Programacion Avanzada 2022-2")
-st.write("Hola **como** estas")
+st.write(""**Introducción**")
 
 agendar = st.slider("Programe la asesoria:", value=(time(11,30), time(12,45)))
 st.write("Esta agendado para: {}".format(agendar))
