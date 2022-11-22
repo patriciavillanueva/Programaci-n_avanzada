@@ -3,7 +3,7 @@ import streamlit as st
 import urllib.request
 import pandas as pd
 import numpy as np
-st.header("CATALOGO SISMICO 1960-2021 (IGP)")
+st.header("Fallecidos por COVID - 19 [Ministerio de Salud MINSA]")
 @st.experimental_memo
 
 def download_data():
