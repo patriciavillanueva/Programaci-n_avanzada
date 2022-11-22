@@ -4,7 +4,7 @@ import urllib.request
 import pandas as pd
 import numpy as np
 st.header("Fallecidos por COVID - 19 [Ministerio de Salud MINSA]")
-@st.experimental_memo
+#@st.experimental_memo
 
 st.subheader("**covid**")    
 video_file = open('Coronavirus Covid-19: Claves para entender la enfermedad y protegerse - Clínica Alemana.mp4', 'rb')
