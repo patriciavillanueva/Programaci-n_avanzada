@@ -13,3 +13,4 @@ option = st.selectbox("¿Como nos ponemos en contacto?", ('Edad', 'Sexo', 'Depar
 
 st.write("Su seleccion fue: ", option)
 
+
