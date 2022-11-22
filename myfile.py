@@ -3,7 +3,7 @@ import streamlit as st
 import pandas as pd
 
 
-st.subheader("**covid**")    
+st.subheader("**el covicho**")    
 video_file = open('Coronavirus Covid-19_ Claves para entender la enfermedad y protegerse - Clínica Alemana.mp4', 'rb')
 video_bytes = video_file.read()
 st.video(video_bytes)
