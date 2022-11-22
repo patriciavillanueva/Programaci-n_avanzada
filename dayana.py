@@ -28,3 +28,4 @@ selected_sexo=st.sidebar.multiselect('Sexo', unique_sexo, unique_sexo)
 
 unique_depa=["AMAZONAS","ANCASH","APURIMAC","AREQUIPA","AYACUCHO","CAJAMARCA","CALLAO","CUSCO","HUANCAVELICA","HUANUCO","ICA","JUNÍN","LA LIBERTAD","LAMBAYEQUE","LIMA","LORETO","MADRE DE DIOS","MOQUEGUA","PASCO","PIURA","PUNO","SAN MARTÍN","TACNA","TUMBES","UCAYALI"]
 selected_depa=st.sidebar.multiselect('Departamento', unique_depa, unique_depa)
+
