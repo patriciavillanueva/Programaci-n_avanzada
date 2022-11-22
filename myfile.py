@@ -4,9 +4,9 @@ import pandas as pd
 
 
 
-st.title("Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]")
-st.markdown("**Proyecto de Programacion Avanzada 2022-2**")
-st.write("--------------------------------------------------------------------------------")
+#st.title("Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]")
+#st.markdown("**Proyecto de Programacion Avanzada 2022-2**")
+#st.write("--------------------------------------------------------------------------------")
 
 #from PIL import Image
 #intro=Image.open('INTRO.jpg')
