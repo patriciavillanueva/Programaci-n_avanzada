@@ -1,23 +1,9 @@
+#$ pip install streamlit --upgrade
 import urllib.request
 import streamlit as st
 import pandas as pd
-
-
-
-st.title("Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]")
-st.markdown("**Proyecto de Programacion Avanzada 2022-2**")
-st.write("--------------------------------------------------------------------------------")
-
-from PIL import Image
-intro=Image.open('INTRO.jpg')
-st.image(intro)
-
-
-pict = Image.open('COVI.jpg')
-st.image(pict)
-
-#*****************************
 st.header("Dataset MINAM")
+
 @st.experimental_memo
 def download_data():
    url="http://server01.labs.org.pe:2005/fallecidos_covid.csv"
@@ -25,6 +11,26 @@ def download_data():
    urllib.request.urlretrieve(url,filename)
    df=pd.read_csv('data.csv', sep=';')
    return df
+c=download_data()
+#st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
+#st.dataframe(c)
+#st.subheader("Características del Dataset")
+#st.write(c.describe())
+
+#st.title("Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]")
+#st.markdown("**Proyecto de Programacion Avanzada 2022-2**")
+#st.write("--------------------------------------------------------------------------------")
+
+#from PIL import Image
+#intro=Image.open('INTRO.jpg')
+#st.image(intro)
+
+
+#pict = Image.open('COVI.jpg')
+#st.image(pict)
+
+#*****************************
+
 #-----------------------------------------------------------------------------
 c=download_data()
 st.write('**Dimensiones de la tabla:**') 
@@ -43,30 +49,7 @@ url = 'https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fal
 datos = pd.read_csv(url,sep= ',')
 st.line_chart(data=datos, x='DEPARTAMENTO', y='EDAD_DECLARADA')
 #---------------------------------------------------------------------------------------
-agendar = st.slider("Programe la asesoria:", value=(time(11,30), time(12,45)))
-st.write("Esta agendado para: {}".format(agendar))
 
-d = st.date_input("Fecha de cumpleaños", datetime.date(2019,7,6))
-
-st.write("Tu cumple es:", d)
-
-option = st.selectbox("¿Como nos ponemos en contacto?", ('Email', 'Telefono', 'Whatsapp'))
-
-st.write("Su seleccion fue: ", option)
-
-n = st.slider("n", 5, 100, step=1)
-
-###---------------------------------------------------------------------------------------------------
-
-st.write("FILTRAR DATOS")
-
-import streamlit as st
-options = st.multiselect('Sexo', ['MASCULINO','FEMENINO'])
-st.write('has seleccionado:', options)
-
-d = st.date_input("Fecha de fallecimiento",datetime.date(0,0,0))
-
-st.write("Tu cumple es:", d)
 
 option = st.selectbox(
      'Seleccione el tipo de gráfico',
