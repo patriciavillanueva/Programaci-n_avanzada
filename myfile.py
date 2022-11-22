@@ -7,7 +7,7 @@ st.header("CATALOGO SISMICO 1960-2021 (IGP)")
 @st.experimental_memo
 
 def download_data():
-   url="http://server01.labs.org.pe:2005/fallecidos_covid.csv"
+   url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
    filename="Catalogo1960_2021.xlsx"
    urllib.request.urlretrieve(url,filename)
    df=pd.read_csv('Catalogo1960_2021.xlsx')
@@ -22,6 +22,7 @@ st.write(c.describe())
 import urllib.request
 import streamlit as st
 import pandas as pd
+
 st.header("Dataset MINAM")
 
 @st.experimental_memo
