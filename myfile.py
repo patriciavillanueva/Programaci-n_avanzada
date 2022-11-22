@@ -93,3 +93,4 @@ elif option == "Gráfico de barras por PROVINCIA":
 
 #st.sidebar.header("Entradas del usuario")
 #selected_SEXO=st.sidebar.selectbox('SEXO', ('FEMENINO','MASCULINO'))
+
