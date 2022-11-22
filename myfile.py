@@ -1,37 +1,21 @@
-#$ pip install streamlit --upgrade
-import streamlit as st
-import urllib.request
-import pandas as pd
-import numpy as np
-st.header("Fallecidos por COVID - 19 [Ministerio de Salud MINSA]")
-#@st.experimental_memo
-
-st.subheader("**covid**")    
-video_file = open('Coronavirus Covid-19_ Claves para entender la enfermedad y protegerse - Clínica Alemana.mp4', 'rb')
-video_bytes = video_file.read()
-st.video(video_bytes)
-st.write("**Fuente**: Clínica Alemana. (2020). https://www.youtube.com/watch?v=vlzxSleRnmg")
-
-
-def download_data():
-   url="https://www.datosabiertos.gob.pe/sites/default/files/Catalogo1960_2021.csv"
-   filename="Catalogo1960_2021.xlsx"
-   urllib.request.urlretrieve(url,filename)
-   df=pd.read_csv('Catalogo1960_2021.xlsx')
-   return df
-c=download_data()
-st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
-st.dataframe(c)
-st.subheader("Características del Dataset")
-st.write(c.describe())
-
-#$ pip install streamlit --upgrade
 import urllib.request
 import streamlit as st
 import pandas as pd
 
+st.title("Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]")
+st.markdown("*Proyecto de Programacion Avanzada 2022-2*")
+st.write("--------------------------------------------------------------------------------")
+
+from PIL import Image
+intro=Image.open('INTRO.jpg')
+st.image(intro)
+
+
+pict = Image.open('COVI.jpg')
+st.image(pict)
+
+#***********
 st.header("Dataset MINAM")
-
 @st.experimental_memo
 def download_data():
    url="http://server01.labs.org.pe:2005/fallecidos_covid.csv"
@@ -39,29 +23,9 @@ def download_data():
    urllib.request.urlretrieve(url,filename)
    df=pd.read_csv('data.csv', sep=';')
    return df
-c=download_data()
-#st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
-#st.dataframe(c)
-#st.subheader("Características del Dataset")
-#st.write(c.describe())
-
-#st.title("Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]")
-#st.markdown("**Proyecto de Programacion Avanzada 2022-2**")
-#st.write("--------------------------------------------------------------------------------")
-
-#from PIL import Image
-#intro=Image.open('INTRO.jpg')
-#st.image(intro)
-
-
-#pict = Image.open('COVI.jpg')
-#st.image(pict)
-
-#*****************************
-
 #-----------------------------------------------------------------------------
 c=download_data()
-st.write('**Dimensiones de la tabla:**') 
+st.write('*Dimensiones de la tabla:*') 
 st.write('* Fila: ' + str(c.shape[0]))
 st.write('* Columnas: ' + str(c.shape[1]))
 st.dataframe(c)
@@ -127,3 +91,13 @@ elif option == "Gráfico de barras por PROVINCIA":
 
 #st.sidebar.header("Entradas del usuario")
 #selected_SEXO=st.sidebar.selectbox('SEXO', ('FEMENINO','MASCULINO'))
+
+
+st.subheader("**covid**")    
+video_file = open('Coronavirus Covid-19_ Claves para entender la enfermedad y protegerse - Clínica Alemana.mp4', 'rb')
+video_bytes = video_file.read()
+st.video(video_bytes)
+st.write("**Fuente**: Clínica Alemana. (2020). https://www.youtube.com/watch?v=vlzxSleRnmg")
+
+
+
