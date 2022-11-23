@@ -3,7 +3,10 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
-
+st.markdown("""
+	Esta app permite al usuario visualizar los datos de fallecidos por COVID-19
+	* **Base de datos:** [MINAM-Ministerio de Salud del Perú (https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa).
+	""")
 #CRITERIOS
 imageCRITERIOS = Image.open('CRITERIOS.jpg')
 st.image(imageCRITERIOS)
