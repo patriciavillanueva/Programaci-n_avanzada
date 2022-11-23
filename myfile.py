@@ -22,7 +22,7 @@ st.write(c.describe())
 st.title('Contaminantes') 
 
 #url del archivo en formato raw
-url = 'https://raw.githubusercontent.com/brigytt/G_PROGRA/main/Catalogo1960_2021.csv'…
+url = 'https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fallecidos_covid%20(2).csv'
 
 
 
