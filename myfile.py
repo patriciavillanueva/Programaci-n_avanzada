@@ -19,6 +19,7 @@ st.markdown("""
 	* **Base de datos:** [MINAM-Ministerio de Salud del Perú (https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa).
 	""")
 
+
 #CRITERIOS
 st.subheader("**CRITERIOS TECNICOS**")    
 st.write("""A partir del 31.mayo.2021 se cambió el criterio de “Fallecidos por Covid-19” por “Muertes por Covid-19” y como resultado el dataset creció casi al triple en el número de registros. Esta nueva clasificación está definida por el cumplimiento de al menos uno de los siguientes siete criterios técnicos:""")
@@ -31,6 +32,38 @@ st.write("Con ese contexto, resulta necesario que el país cuente con un registr
 #OBJETIVO:
 st.subheader("**OBJETIVO DE LA PAGINA**")   
 st.write("Facilitar la busqueda de datos relacionados a los fallecidos por covid-19 (sexo, edad, departamento, provincia, distrito y ubigeo) para conocer la magnitud del efecto.")
+
+st.subheader("**Variables de la data**") 
+st.markdown("""
+	* **FECHA CORTE** Fecha de corte de información.
+	""")
+st.markdown("""
+	* **UUID: ** ID de la persona fallecida..
+	""")
+st.markdown("""
+	* **FECHA_FALLECIMIENTO: ** Fecha de fallecimiento.
+	""")
+st.markdown("""
+	* **EDAD_DECLARADA:  ** Edad de la persona fallecida.
+	""")
+st.markdown("""
+	* **SEXO:** Sexo de la persona fallecida.
+	""")
+st.markdown("""
+	* **CLASIFICACION_DEF: ** Criterios utilizados para la confirmación de la defunción
+	""")
+st.markdown("""
+	* **UBIGEO: ** Código de Ubicación Geografica que denotan "DDppdd" (Departamento, provincia,distrito), fuente INEI.
+	""")
+st.markdown("""
+	* **DEPARTAMENTO: ** Departamento donde reside la persona fallecida. 
+	""")
+st.markdown("""
+	* **PROVINCIA: ** Provincia donde reside la persona fallecida.
+	""")
+st.markdown("""
+	* **DISTRITO: ** Distrito donde reside la persona fallecida.
+	""")
 
 #VIDEO DE YOUTUBE
 st.subheader("**VIDEO INFORMATIVO DE LA PROBLEMATICA**")    
