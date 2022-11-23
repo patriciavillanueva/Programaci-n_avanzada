@@ -13,9 +13,9 @@ st.markdown("""
 	* **Base de datos:** [MINAM-Ministerio de Salud del Perú (https://www.datosabiertos.gob.pe/dataset/fallecidos-por-covid-19-ministerio-de-salud-minsa).
 	""")
 #CRITERIOS
-st.subheader(""A partir del 31.mayo.2021 se cambió el criterio de “Fallecidos por Covid-19” por “Muertes por Covid-19” y como resultado el dataset 
+st.subheader("""A partir del 31.mayo.2021 se cambió el criterio de “Fallecidos por Covid-19” por “Muertes por Covid-19” y como resultado el dataset 
 creció casi al triple en el número de registros. Esta nueva clasificación está 
-definida por el cumplimiento de al menos uno de los siguientes siete criterios técnicos:"")
+definida por el cumplimiento de al menos uno de los siguientes siete criterios técnicos:""")
 image_CRITERIOS = Image.open('CRITERIOS.jpg')
 st.image(image_CRITERIOS)
 
