@@ -5,8 +5,8 @@ from PIL import Image
 st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
 
 #CRITERIOS
-image_INTRODUCION = Image.open('INTRODUCION.jpg')
-st.image(image_INTRODUCION)
+image_INTRODUCCION = Image.open('INTROUCCION.jpg')
+st.image(image_INTRODUCCION)
 
 st.markdown("""
 	Esta app permite al usuario visualizar los datos de fallecidos por COVID-19
