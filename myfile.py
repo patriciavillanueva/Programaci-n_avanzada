@@ -1,11 +1,34 @@
+#$ pip install streamlit --upgrade
 import urllib.request
 import streamlit as st
 import pandas as pd
 from PIL import Image
+import numpy as np
+
+st.header("DATA DE FALLECIDOS POR COVID-19")
+@st.experimental_memo
+def download_data():
+   url="http://server01.labs.org.pe:2005/fallecidos_covid.csv"
+   filename="Catalogo1960_2021.xlsx"
+   urllib.request.urlretrieve(url,filename)
+   df=pd.read_csv('fallecidos_covid (2).csv')
+   return df
+c=download_data()
+st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
+st.dataframe(c)
+st.subheader("Características del Dataset")
+st.write(c.describe())
+
+st.title('Contaminantes') 
+
+#url del archivo en formato raw
+url = 'https://raw.githubusercontent.com/brigytt/G_PROGRA/main/Catalogo1960_2021.csv'…
+
+
 
 #TITULO
 st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
-st.markdown("PROYECTO FINAL PROGRAMACIÓN 2022-2")
+st.markdown("**PROYECTO FINAL PROGRAMACIÓN 2022-2**")
 st.write("------------------------------------------------------------------------------------------------")
 
 #IMAGEN PORTADA
@@ -60,7 +83,7 @@ st.markdown("""
 	* **UBIGEO:** Código de Ubicación Geografica que denotan "DDppdd" (Departamento, provincia,distrito), fuente INEI.
 	""")
 st.markdown("""
-	* **DEPARTAMENTO: ** Departamento donde reside la persona fallecida. 
+	* **DEPARTAMENTO:** Departamento donde reside la persona fallecida. 
 	""")
 st.markdown("""
 	* **PROVINCIA:** Provincia donde reside la persona fallecida.
