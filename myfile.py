@@ -5,7 +5,7 @@ from PIL import Image
 st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
 
 #CRITERIOS
-image_INTRODUCCION = Image.open('INTROUCCION.jpg')
+image_INTRODUCCION = Image.open('INTRODUCCION.jpg')
 st.image(image_INTRODUCCION)
 
 st.markdown("""
