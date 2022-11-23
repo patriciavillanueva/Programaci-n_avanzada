@@ -11,7 +11,6 @@ st.header("Conjunto de datos FALLECIDOS COVID")
 @st.experimental_memo
 def download_data():
    url="https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fallecidos_covid.csv"
-   
    df=pd.read_csv("fallecidos_covid.csv")
    return df
 c=download_data()
