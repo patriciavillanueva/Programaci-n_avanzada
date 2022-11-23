@@ -2,13 +2,15 @@ import urllib.request
 import streamlit as st
 import pandas as pd
 from PIL import Image
-st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
 
 #IMAGEN PORTADA
 imagen_portada = Image.open('imagenportada.jpg')
 st.image(imagen_portada)
 
-#CRITERIOS
+#TITULO
+st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
+
+#INTRODUCCIÓN
 image_INTRODUCCION = Image.open('INTRODUCCION.jpg')
 st.image(image_INTRODUCCION)
 
@@ -23,7 +25,12 @@ st.write("""A partir del 31.mayo.2021 se cambió el criterio de “Fallecidos po
 image_CRITERIOS = Image.open('CRITERIOS.jpg')
 st.image(image_CRITERIOS)
 
+#CONTEXTO
+st.write("Con ese contexto, resulta necesario que el país cuente con un registro actualizado del número de personas fallecidas como consecuencia del COVID-19, que permita contar,en el menor tiempo posible con data que ayude a planificar, presupuestar y responder a la pandemia enfocándose en los grupos (sexo y edad) y/o zonas (departamento, provincia y distrito) más afectadas por la pandemia. Además, muestre el impacto que tuvo la pandemia y si las medidas de protección específicas, como la vacunación, están siendo efectivas.")
 
+#OBJETIVO:
+st.subheader("**OBJETIVO DE LA PAGINA**")   
+st.write("Facilitar la busqueda de datos relacionados a los fallecidos por covid-19 (sexo, edad, departamento, provincia, distrito y ubigeo) para conocer la magnitud del efecto.")
 
 #VIDEO DE YOUTUBE
 st.subheader("**VIDEO INFORMATIVO DE LA PROBLEMATICA**")    
