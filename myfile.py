@@ -3,12 +3,15 @@ import streamlit as st
 import pandas as pd
 from PIL import Image
 
+#TITULO
+st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
+st.write("------------------------------------------------------------------------------------------------")
+
 #IMAGEN PORTADA
 imagen_portada = Image.open('imagenportada.jpg')
 st.image(imagen_portada)
 
-#TITULO
-st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
+
 
 #INTRODUCCIÓN
 image_INTRODUCCION = Image.open('INTRODUCCION.jpg')
@@ -38,31 +41,31 @@ st.markdown("""
 	* **FECHA CORTE** Fecha de corte de información.
 	""")
 st.markdown("""
-	* **UUID: ** ID de la persona fallecida..
+	* **UUID:** ID de la persona fallecida..
 	""")
 st.markdown("""
-	* **FECHA_FALLECIMIENTO: ** Fecha de fallecimiento.
+	* **FECHA_FALLECIMIENTO:** Fecha de fallecimiento.
 	""")
 st.markdown("""
-	* **EDAD_DECLARADA:  ** Edad de la persona fallecida.
+	* **EDAD_DECLARADA:** Edad de la persona fallecida.
 	""")
 st.markdown("""
 	* **SEXO:** Sexo de la persona fallecida.
 	""")
 st.markdown("""
-	* **CLASIFICACION_DEF: ** Criterios utilizados para la confirmación de la defunción
+	* **CLASIFICACION_DEF:** Criterios utilizados para la confirmación de la defunción
 	""")
 st.markdown("""
-	* **UBIGEO: ** Código de Ubicación Geografica que denotan "DDppdd" (Departamento, provincia,distrito), fuente INEI.
+	* **UBIGEO:** Código de Ubicación Geografica que denotan "DDppdd" (Departamento, provincia,distrito), fuente INEI.
 	""")
 st.markdown("""
 	* **DEPARTAMENTO: ** Departamento donde reside la persona fallecida. 
 	""")
 st.markdown("""
-	* **PROVINCIA: ** Provincia donde reside la persona fallecida.
+	* **PROVINCIA:** Provincia donde reside la persona fallecida.
 	""")
 st.markdown("""
-	* **DISTRITO: ** Distrito donde reside la persona fallecida.
+	* **DISTRITO:** Distrito donde reside la persona fallecida.
 	""")
 
 #VIDEO DE YOUTUBE
