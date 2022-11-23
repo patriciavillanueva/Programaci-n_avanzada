@@ -21,22 +21,28 @@ st.write(c.describe())
 
 def load_data(year):
 	df = download_data()
-	df=df.astype({'ANO':'str'})
-	df['PM 10'] = pd.to_numeric(df['PM 10'])
-	df['PM 2.5'] = pd.to_numeric(df['PM 2.5'])
-	df['SO2'] = pd.to_numeric(df['SO2'])
-	df['NO2'] = pd.to_numeric(df['NO2'])
-	df['O3'] = pd.to_numeric(df['O3'])
-	df['CO'] = pd.to_numeric(df['CO'])
-	grouped = df.groupby(df.ANO)
-	df_year = grouped.get_group(year)
-	return df_year
+	df=df.astype({'EDAD_DECLARADA':'str'})
+	grouped = df.groupby(df.EDAD_DECLARADA)
+	df_EDAD = grouped.get_group(EDAD)
+	return df_EDAD
 
-data_by_year=load_data(str(selected_year))
+data_by_EDAD=load_data(str(selected_EDAD))
+
+sorted_unique_depa=sorted(data_by_EDAD.DEPARTAMENTO.unique())
+
+selected_depa=st.sidebar.multiselect('Departamento',sorted_unique_depa,sorted_unique_depa)
 
 unique_sexo=["FEMENINO","MASCULINO"]
-selected_sexo=st.sidebar.multiselect('Sexo', unique_sexo, unique_sexo)
+selected_sexo=st.sidebar.multiselect('SEXO', unique_sexo, unique_sexo)
 
-unique_depa=["AMAZONAS","ANCASH","APURIMAC","AREQUIPA","AYACUCHO","CAJAMARCA","CALLAO","CUSCO","HUANCAVELICA","HUANUCO","ICA","JUNÍN","LA LIBERTAD","LAMBAYEQUE","LIMA","LORETO","MADRE DE DIOS","MOQUEGUA","PASCO","PIURA","PUNO","SAN MARTÍN","TACNA","TUMBES","UCAYALI"]
-selected_depa=st.sidebar.multiselect('Departamento', unique_depa, unique_depa)
+df_selected=data_by_EDAD[(data_by_EDAD.DEPARTAMENTO.isin(selected_depa))]
 
+def remove_columns(dataset, cols):
+	return dataset.drop(cols, axis=1)
+
+cols=np.setdiff1d(unique_sexo, selected_sexo)
+
+st.subheader('Mostrar data de departamento(s) y sexo(s) seleccionado(s)')
+data=remove_columns(df_selected, cols)
+st.write('Dimensiones: ' + str(data.shape[0]) + ' filas y ' + str(data.shape[1]) + ' columnas')
+st.dataframe(data)
