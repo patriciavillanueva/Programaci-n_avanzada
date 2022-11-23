@@ -4,6 +4,10 @@ import pandas as pd
 from PIL import Image
 st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
 
+#IMAGEN PORTADA
+imagen_portada = Image.open('imagenportada.jpg')
+st.image(imagen_portada)
+
 #CRITERIOS
 image_INTRODUCCION = Image.open('INTRODUCCION.jpg')
 st.image(image_INTRODUCCION)
@@ -19,9 +23,7 @@ st.write("""A partir del 31.mayo.2021 se cambió el criterio de “Fallecidos po
 image_CRITERIOS = Image.open('CRITERIOS.jpg')
 st.image(image_CRITERIOS)
 
-#IMAGEN PORTADA
-imagen_portada = Image.open('imagenportada.jpg')
-st.image(imagen_portada)
+
 
 #VIDEO DE YOUTUBE
 st.subheader("**VIDEO INFORMATIVO DE LA PROBLEMATICA**")    
