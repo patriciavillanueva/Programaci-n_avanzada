@@ -11,7 +11,7 @@ def download_data():
    url="http://server01.labs.org.pe:2005/fallecidos_covid.csv"
    filename="Catalogo1960_2021.xlsx"
    urllib.request.urlretrieve(url,filename)
-   df=pd.read_csv('fallecidos_covid (2).csv')
+   df=pd.read_csv('datos_horarios_contaminacion_lima.csv')
    return df
 c=download_data()
 st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
