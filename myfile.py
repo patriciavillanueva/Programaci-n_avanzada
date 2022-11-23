@@ -1,8 +1,8 @@
 import urllib.request
 import streamlit as st
 import pandas as pd
-
 from PIL import Image
+st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
 
 #CRITERIOS
 imageCRITERIOS = Image.open('CRITERIOS.jpg')
