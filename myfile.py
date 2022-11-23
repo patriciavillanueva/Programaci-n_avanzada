@@ -9,10 +9,11 @@ st.header("DATA DE FALLECIDOS POR COVID-19")
 @st.experimental_memo
 def download_data():
    url="http://server01.labs.org.pe:2005/fallecidos_covid.csv"
-   filename="Catalogo1960_2021.xlsx"
+   filename="DataSet de Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]"
    urllib.request.urlretrieve(url,filename)
-   df=pd.read_csv('datos_horarios_contaminacion_lima.csv')
+   df=pd.read_csv('DataSet de Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
    return df
+
 c=download_data()
 st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
 st.dataframe(c)
