@@ -5,6 +5,7 @@ from PIL import Image
 
 #TITULO
 st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
+st.markdown("PROYECTO FINAL PROGRAMACIÓN 2022-2")
 st.write("------------------------------------------------------------------------------------------------")
 
 #IMAGEN PORTADA
