@@ -19,6 +19,21 @@ st.dataframe(c)
 st.subheader("Características del Dataset")
 st.write(c.describe())
 
+def load_data(year):
+	df = download_data()
+	df=df.astype({'ANO':'str'})
+	df['PM 10'] = pd.to_numeric(df['PM 10'])
+	df['PM 2.5'] = pd.to_numeric(df['PM 2.5'])
+	df['SO2'] = pd.to_numeric(df['SO2'])
+	df['NO2'] = pd.to_numeric(df['NO2'])
+	df['O3'] = pd.to_numeric(df['O3'])
+	df['CO'] = pd.to_numeric(df['CO'])
+	grouped = df.groupby(df.ANO)
+	df_year = grouped.get_group(year)
+	return df_year
+
+data_by_year=load_data(str(selected_year))
+
 unique_sexo=["FEMENINO","MASCULINO"]
 selected_sexo=st.sidebar.multiselect('Sexo', unique_sexo, unique_sexo)
 
