@@ -17,9 +17,6 @@ st.dataframe(c)
 st.subheader("Características del Dataset")
 st.write(c.describe())
 
-st.subheader("Características del Dataset")
-st.write(c.describe())
-
 st.title('Contaminantes') 
 
 #url del archivo en formato raw
