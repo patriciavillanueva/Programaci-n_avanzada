@@ -5,23 +5,6 @@ import pandas as pd
 from PIL import Image
 import numpy as np
 
-st.header("DATA FALLECIDOS COVID")
-@st.experimental_memo
-def download_data():
-   url="https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fallecidos_covid.csv"
-   df=pd.read_csv("fallecidos_covid.csv")
-   return df
-c=download_data()
-st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
-st.dataframe(c)
-st.subheader("Características del Dataset")
-st.write(c.describe())
-
-st.subheader('Relaión provincia-edad_declrada') 
-#url del archivo en formato raw
-url = 'https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fallecidos_covid%20(3)%20(2).csv'
-datos = pd.read_csv(url,sep= ',')
-st.line_chart(data=datos, x='PROVINCIA', y='EDAD_DECLARADA')
 
 
 #TITULO
@@ -89,6 +72,23 @@ st.markdown("""
 st.markdown("""
 	* **DISTRITO:** Distrito donde reside la persona fallecida.
 	""")
+st.header("DATA FALLECIDOS COVID")
+@st.experimental_memo
+def download_data():
+   url="https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fallecidos_covid.csv"
+   df=pd.read_csv("fallecidos_covid.csv")
+   return df
+c=download_data()
+st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
+st.dataframe(c)
+st.subheader("Características del Dataset")
+st.write(c.describe())
+
+st.subheader('Relaión provincia-edad_declrada') 
+#url del archivo en formato raw
+url = 'https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fallecidos_covid%20(3)%20(2).csv'
+datos = pd.read_csv(url,sep= ',')
+st.line_chart(data=datos, x='CLASIFICACION_DEF', y='EDAD_DECLARADA')
 
 #VIDEO DE YOUTUBE
 st.subheader("**VIDEO INFORMATIVO DE LA PROBLEMATICA**")    
