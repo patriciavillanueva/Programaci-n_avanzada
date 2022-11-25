@@ -17,14 +17,11 @@ st.dataframe(c)
 st.subheader("Características del Dataset")
 st.write(c.describe())
 
-st.subheader("Características del Dataset")
-st.write(c.describe())
-
-st.title('Contaminantes') 
+st.subheader('Relaión provincia-edad_declrada') 
 #url del archivo en formato raw
 url = 'https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fallecidos_covid%20(3)%20(2).csv'
 datos = pd.read_csv(url,sep= ',')
-st.line_chart(data=datos, x='EDAD_DECLARADA', y='SEXO')
+st.line_chart(data=datos, x='PROVINCIA', y='EDAD_DECLARADA')
 
 
 #TITULO
