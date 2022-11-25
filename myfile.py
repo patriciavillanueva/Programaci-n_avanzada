@@ -24,7 +24,7 @@ st.title('Contaminantes')
 #url del archivo en formato raw
 url = 'https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fallecidos_covid%20(3)%20(2).csv'
 datos = pd.read_csv(url,sep= ',')
-st.line_chart(data=datos, x='FECHA_UTC', y='MAGNITUD')
+st.line_chart(data=datos, x='EDAD_DECLARADA', y='SEXO')
 
 
 #TITULO
