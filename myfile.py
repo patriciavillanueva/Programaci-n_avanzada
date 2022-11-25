@@ -5,20 +5,17 @@ import pandas as pd
 from PIL import Image
 import numpy as np
 
-st.header("DATA DE FALLECIDOS POR COVID-19")
+st.header("DATA FALLECIDOS COVID")
 @st.experimental_memo
 def download_data():
-   url="http://server01.labs.org.pe:2005/fallecidos_covid.csv"
-   filename="DataSet de Fallecidos por COVID-19 - [Ministerio de Salud - MINSA].csv"
-   urllib.request.urlretrieve(url,filename)
-   df=pd.read_csv('DataSet de Fallecidos por COVID-19 - [Ministerio de Salud - MINSA].csv')
+   url="https://raw.githubusercontent.com/DayanaHV/Programaci-n_avanzada/main/fallecidos_covid.csv"
+   df=pd.read_csv("fallecidos_covid.csv")
    return df
-
 c=download_data()
-st.write('**Dimensiones de la tabla:**') 
-st.write('* Fila: ' + str(c.shape[0]))
-st.write('* Columnas: ' + str(c.shape[1]))
+st.write('Dimensiones: ' + str(c.shape[0]) + ' filas y ' + str(c.shape[1]) + ' columnas')
 st.dataframe(c)
+st.subheader("Características del Dataset")
+st.write(c.describe())
 
 st.subheader("Características del Dataset")
 st.write(c.describe())
