@@ -9,8 +9,8 @@ import numpy as np
 
 #TITULO
 st.title('Fallecidos por COVID-19 - [Ministerio de Salud - MINSA]')
-st.markdown("**PROYECTO FINAL PROGRAMACIÓN 2022-2**")
 st.write("------------------------------------------------------------------------------------------------")
+st.markdown("**PROYECTO FINAL PROGRAMACIÓN 2022-2**")
 
 #IMAGEN PORTADA
 imagen_portada = Image.open('imagenportada.jpg')
